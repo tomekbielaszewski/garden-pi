@@ -27,6 +27,7 @@
 # 900  -> 15min
 # 1200 -> 20min
 # 1800 -> 30min
+#
 0 5 * * * python ~/garden-pi/watering.py 1150 7
 20 5 * * * python ~/garden-pi/watering.py 1150 7
 40 5 * * * python ~/garden-pi/watering.py 1150 7
