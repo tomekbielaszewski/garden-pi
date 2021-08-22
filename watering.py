@@ -31,7 +31,7 @@ if len(sys.argv) != 3:
 wateringTime = sys.argv[1]
 relayId = sys.argv[2]
 
-print relayId
+print type(relayId)
 
 if relayId < 0 or relayId > 7:
   print 'Argument used: ', str(sys.argv)
