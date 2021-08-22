@@ -4,7 +4,7 @@ import time
 import sys
 
 print 'Number of arguments:', len(sys.argv), 'arguments.'
-print 'Argument List:', str(sys.argv)
+print 'Argument used:', str(sys.argv)
 
 # This little script provides an easy way to open the electrical relays connected
 # to RPi using command:
@@ -24,31 +24,38 @@ print 'Argument List:', str(sys.argv)
 # 06     07
 # 05     08
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
+  print 'Argument used: ', str(sys.argv)
   print 'Watering script needs 2 arguments! Time in seconds and the relay number. Example:'
   print 'python watering.py 60 0'
   print 'This will enable first relay (index 0) for 60 seconds'
   sys.exit()
 
-if sys.argv[1] < 0 or sys.argv[1] > 7:
+wateringTime = sys.argv[1]
+relayId = sys.argv[2]
+
+if relayId < 0 or relayId > 7:
+  print 'Argument used: ', str(sys.argv)
   print 'Relay number has to be between 0 and 7'
   sys.exit()
 
-if sys.argv[0] < 0:
+if wateringTime < 0:
+  print 'Argument used: ', str(sys.argv)
   print 'Time of opened relay has to be positive'
   sys.exit()
 
 GPIO.setmode(GPIO.BCM)
 gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
+relayGpio = gpioList[relayId]
 
 for i in gpioList:
   GPIO.setup(i, GPIO.OUT)
   GPIO.output(i, GPIO.HIGH)
 
 try:
-  GPIO.output(sys.argv[1], GPIO.LOW)
-  time.sleep(sys.argv[0])
-  GPIO.output(sys.argv[1], GPIO.HIGH)
+  GPIO.output(relayGpio, GPIO.LOW)
+  time.sleep(wateringTime)
+  GPIO.output(relayGpio, GPIO.HIGH)
   GPIO.cleanup()
 except KeyboardInterrupt:
   GPIO.cleanup()
