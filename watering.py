@@ -28,8 +28,8 @@ if len(sys.argv) != 3:
   print 'This will enable first relay (index 0) for 60 seconds'
   sys.exit()
 
-wateringTime = sys.argv[1]
-relayId = sys.argv[2]
+wateringTime = int(sys.argv[1])
+relayId = int(sys.argv[2])
 
 print type(relayId)
 
