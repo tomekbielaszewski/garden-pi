@@ -32,4 +32,5 @@
 35 17 * * * python ~/garden-pi/watering.py 45 7
 36 17 * * * python ~/garden-pi/watering.py 45 7
 37 17 * * * python ~/garden-pi/watering.py 45 7
+37 18 * * * python ~/garden-pi/watering.py 45 7
 38 17 * * * python ~/garden-pi/watering.py 45 7
