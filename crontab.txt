@@ -28,9 +28,9 @@
 # 1200 -> 20min
 # 1800 -> 30min
 #
-0 5 * * * python ~/garden-pi/watering.py 1150 7
-20 5 * * * python ~/garden-pi/watering.py 1150 7
-40 5 * * * python ~/garden-pi/watering.py 1150 7
-0 6 * * * python ~/garden-pi/watering.py 1150 7
-20 6 * * * python ~/garden-pi/watering.py 1150 7
-40 6 * * * python ~/garden-pi/watering.py 1150 7
+0 5 * * tue,fri python ~/garden-pi/watering.py 1150 7
+20 5 * * tue,fri python ~/garden-pi/watering.py 1150 7
+40 5 * * tue,fri python ~/garden-pi/watering.py 1150 7
+0 6 * * tue,fri python ~/garden-pi/watering.py 1150 7
+20 6 * * tue,fri python ~/garden-pi/watering.py 1150 7
+40 6 * * tue,fri python ~/garden-pi/watering.py 1150 7
