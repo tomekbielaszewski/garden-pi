@@ -21,11 +21,11 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # m h  dom mon dow   command
-59 * * * * python ~/garden-pi/watering.py 45 0
-0 * * * * python ~/garden-pi/watering.py 45 1
-1 * * * * python ~/garden-pi/watering.py 45 2
-2 * * * * python ~/garden-pi/watering.py 45 3
-3 * * * * python ~/garden-pi/watering.py 45 4
-4 * * * * python ~/garden-pi/watering.py 45 5
-5 * * * * python ~/garden-pi/watering.py 45 6
-6 * * * * python ~/garden-pi/watering.py 45 7
+12 * * * * python ~/garden-pi/watering.py 45 0
+13 * * * * python ~/garden-pi/watering.py 45 1
+14 * * * * python ~/garden-pi/watering.py 45 2
+15 * * * * python ~/garden-pi/watering.py 45 3
+16 * * * * python ~/garden-pi/watering.py 45 4
+17 * * * * python ~/garden-pi/watering.py 45 5
+18 * * * * python ~/garden-pi/watering.py 45 6
+19 * * * * python ~/garden-pi/watering.py 45 7
