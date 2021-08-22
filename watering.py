@@ -3,6 +3,9 @@ import RPi.GPIO as GPIO
 import time
 import sys
 
+print 'Number of arguments:', len(sys.argv), 'arguments.'
+print 'Argument List:', str(sys.argv)
+
 # This little script provides an easy way to open the electrical relays connected
 # to RPi using command:
 # python watering.py 60 0
