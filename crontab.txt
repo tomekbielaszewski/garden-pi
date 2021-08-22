@@ -1,8 +1,8 @@
-45 * * * * python ~/garden-pi/watering.py 45 0
-46 * * * * python ~/garden-pi/watering.py 45 1
-47 * * * * python ~/garden-pi/watering.py 45 2
-48 * * * * python ~/garden-pi/watering.py 45 3
-49 * * * * python ~/garden-pi/watering.py 45 4
-50 * * * * python ~/garden-pi/watering.py 45 5
-51 * * * * python ~/garden-pi/watering.py 45 6
-52 * * * * python ~/garden-pi/watering.py 45 7
+59 * * * * python ~/garden-pi/watering.py 45 0
+0 * * * * python ~/garden-pi/watering.py 45 1
+1 * * * * python ~/garden-pi/watering.py 45 2
+2 * * * * python ~/garden-pi/watering.py 45 3
+3 * * * * python ~/garden-pi/watering.py 45 4
+4 * * * * python ~/garden-pi/watering.py 45 5
+5 * * * * python ~/garden-pi/watering.py 45 6
+6 * * * * python ~/garden-pi/watering.py 45 7
