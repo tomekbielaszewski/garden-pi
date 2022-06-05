@@ -11,7 +11,7 @@ import sys
 # of seconds and put it back HIGH
 
 # GPIO | Relay
-#--------------
+# --------------
 # 26     01
 # 21     02
 # 20     03
@@ -22,23 +22,24 @@ import sys
 # 05     08
 
 if len(sys.argv) != 3:
-  print 'Argument used: ', str(sys.argv)
-  print 'Watering script needs 2 arguments! Time in seconds and the relay number. Example:'
-  print 'python watering.py 60 0'
-  print 'This will enable first relay (index 0) for 60 seconds'
+  print('Argument used: ', str(sys.argv))
+  print(
+    'Watering script needs 2 arguments! Time in seconds and the relay number. Example:')
+  print('python watering.py 60 0')
+  print('This will enable first relay (index 0) for 60 seconds')
   sys.exit()
 
 wateringTime = int(sys.argv[1])
 relayId = int(sys.argv[2])
 
 if relayId < 0 or relayId > 7:
-  print 'Argument used: ', str(sys.argv)
-  print 'Relay number has to be between 0 and 7'
+  print('Argument used: ', str(sys.argv))
+  print('Relay number has to be between 0 and 7')
   sys.exit()
 
 if wateringTime < 0:
-  print 'Argument used: ', str(sys.argv)
-  print 'Time of opened relay has to be positive'
+  print('Argument used: ', str(sys.argv))
+  print('Time of opened relay has to be positive')
   sys.exit()
 
 GPIO.setmode(GPIO.BCM)
