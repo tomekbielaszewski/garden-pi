@@ -22,38 +22,38 @@ import sys
 # 05     08
 
 if len(sys.argv) != 3:
-  print('Argument used: ', str(sys.argv))
-  print(
-    'Watering script needs 2 arguments! Time in seconds and the relay number. Example:')
-  print('python watering.py 60 0')
-  print('This will enable first relay (index 0) for 60 seconds')
-  sys.exit()
+    print('Argument used: ', str(sys.argv))
+    print(
+        'Watering script needs 2 arguments! Time in seconds and the relay number. Example:')
+    print('python watering.py 60 0')
+    print('This will enable first relay (index 0) for 60 seconds')
+    sys.exit()
 
 wateringTime = int(sys.argv[1])
 relayId = int(sys.argv[2])
 
 if relayId < 0 or relayId > 7:
-  print('Argument used: ', str(sys.argv))
-  print('Relay number has to be between 0 and 7')
-  sys.exit()
+    print('Argument used: ', str(sys.argv))
+    print('Relay number has to be between 0 and 7')
+    sys.exit()
 
 if wateringTime < 0:
-  print('Argument used: ', str(sys.argv))
-  print('Time of opened relay has to be positive')
-  sys.exit()
+    print('Argument used: ', str(sys.argv))
+    print('Time of opened relay has to be positive')
+    sys.exit()
 
 GPIO.setmode(GPIO.BCM)
 gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
 relayGpio = gpioList[relayId]
 
 for i in gpioList:
-  GPIO.setup(i, GPIO.OUT)
-  GPIO.output(i, GPIO.HIGH)
+    GPIO.setup(i, GPIO.OUT)
+    GPIO.output(i, GPIO.HIGH)
 
 try:
-  GPIO.output(relayGpio, GPIO.LOW)
-  time.sleep(wateringTime)
-  GPIO.output(relayGpio, GPIO.HIGH)
-  GPIO.cleanup()
+    GPIO.output(relayGpio, GPIO.LOW)
+    time.sleep(wateringTime)
+    GPIO.output(relayGpio, GPIO.HIGH)
+    GPIO.cleanup()
 except KeyboardInterrupt:
-  GPIO.cleanup()
+    GPIO.cleanup()
