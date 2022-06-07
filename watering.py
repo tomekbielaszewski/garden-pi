@@ -21,10 +21,30 @@ import sys
 # 06     07
 # 05     08
 
+if len(sys.argv) == 2 and sys.argv[1] == 'test':
+    print('Testing the relays! Every relay should open for 0.5sec. Relays '
+          'should open in order from 1 to 8')
+    GPIO.setmode(GPIO.BCM)
+    gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
+    for i in gpioList:
+        GPIO.setup(i, GPIO.OUT)
+        GPIO.output(i, GPIO.HIGH)
+    for i in gpioList:
+        try:
+            GPIO.output(i, GPIO.LOW)
+            time.sleep(0.5)
+            GPIO.output(i, GPIO.HIGH)
+            GPIO.cleanup()
+        except KeyboardInterrupt:
+            GPIO.cleanup()
+    print('Testing completed!')
+    sys.exit()
+
 if len(sys.argv) != 3:
     print('Argument used: ', str(sys.argv))
     print(
-        'Watering script needs 2 arguments! Time in seconds and the relay number. Example:')
+        'Watering script needs 2 arguments! Time in seconds and the relay '
+        'number. Example:')
     print('python watering.py 60 0')
     print('This will enable first relay (index 0) for 60 seconds')
     sys.exit()
@@ -45,8 +65,6 @@ if wateringTime < 0:
 GPIO.setmode(GPIO.BCM)
 gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
 relayGpio = gpioList[relayId]
-
-print('relayId: ', relayId, ' | relayGpio: ', relayGpio)
 
 for i in gpioList:
     GPIO.setup(i, GPIO.OUT)
