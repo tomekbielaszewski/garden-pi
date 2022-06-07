@@ -46,6 +46,8 @@ GPIO.setmode(GPIO.BCM)
 gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
 relayGpio = gpioList[relayId]
 
+print('relayId: ', relayId, ' | relayGpio: ', relayGpio)
+
 for i in gpioList:
     GPIO.setup(i, GPIO.OUT)
     GPIO.output(i, GPIO.HIGH)
