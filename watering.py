@@ -21,11 +21,12 @@ import sys
 # 06     07
 # 05     08
 
+gpioList = [26, 12, 20, 19, 16, 13, 6, 5]
+
 if len(sys.argv) == 2 and sys.argv[1] == 'test':
     print('Testing the relays! Every relay should open for 0.5sec. Relays '
           'should open in order from 1 to 8')
     GPIO.setmode(GPIO.BCM)
-    gpioList = [26, 12, 20, 19, 16, 13, 6, 5]
     for i in gpioList:
         print('setting PIN:', i, 'to HIGH')
         GPIO.setup(i, GPIO.OUT)
@@ -65,7 +66,6 @@ if wateringTime < 0:
     sys.exit()
 
 GPIO.setmode(GPIO.BCM)
-gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
 relayGpio = gpioList[relayId]
 
 for i in gpioList:
