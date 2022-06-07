@@ -27,7 +27,7 @@ if len(sys.argv) == 2 and sys.argv[1] == 'test':
     GPIO.setmode(GPIO.BCM)
     gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
     for i in gpioList:
-        print('setting PIN:', i, ' to HIGH')
+        print('setting PIN:', i, 'to HIGH')
         GPIO.setup(i, GPIO.OUT)
         GPIO.output(i, GPIO.HIGH)
     for i in gpioList:
