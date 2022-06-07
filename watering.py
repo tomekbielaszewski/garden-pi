@@ -13,7 +13,7 @@ import sys
 # GPIO | Relay
 # --------------
 # 26     01
-# 21     02
+# 12     02
 # 20     03
 # 19     04
 # 16     05
@@ -25,7 +25,7 @@ if len(sys.argv) == 2 and sys.argv[1] == 'test':
     print('Testing the relays! Every relay should open for 0.5sec. Relays '
           'should open in order from 1 to 8')
     GPIO.setmode(GPIO.BCM)
-    gpioList = [26, 21, 20, 19, 16, 13, 6, 5]
+    gpioList = [26, 12, 20, 19, 16, 13, 6, 5]
     for i in gpioList:
         print('setting PIN:', i, 'to HIGH')
         GPIO.setup(i, GPIO.OUT)
